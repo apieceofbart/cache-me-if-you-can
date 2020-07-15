@@ -1,7 +1,26 @@
 .App {
   padding: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  margin-top: 50px;
+}
+
+nav {
+  margin-right: 50px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+nav ul li {
+  margin: 10px 0;
 }
 
 .App > * {
