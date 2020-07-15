@@ -12,16 +12,6 @@ interface DraftsProps {
   publishPost: (id: string) => void
 }
 
-export const getDraftsQuery = (cache: Cache) => `
-  {
-    posts (published: false, cache: ${cache}) {
-      id
-      title
-      published
-    }
-  }
-`
-
 export const Drafts = ({ data, error, loading, publishPost }: DraftsProps) => {
   if (error) {
     return <span>Error!</span>

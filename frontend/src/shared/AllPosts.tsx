@@ -10,15 +10,6 @@ interface AllPostsProps {
   togglePublish: (id: string) => void
 }
 
-export const ALL_POSTS_QUERY = `query AllPosts($cache: Cache!) {
-    posts (cache: $cache) {
-      id
-      title
-      published
-    }
-  }
-`
-
 export const AllPosts = ({ data, loading, error, togglePublish }: AllPostsProps) => {
   if (error) {
     return <span>Error! {JSON.stringify(error, null, 2)}</span>

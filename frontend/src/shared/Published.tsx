@@ -12,16 +12,6 @@ interface PublishedProps {
   unpublishPost: (id: string) => void
 }
 
-export const getPublishedQuery = (cache: Cache) => `
-{
-  posts (published: true, cache: ${cache}) {
-    id
-    title
-    published
-  }
-}
-`
-
 export const Published = ({ data, error, loading, unpublishPost }: PublishedProps) => {
   if (error) {
     return <span>Error!</span>
