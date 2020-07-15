@@ -4,7 +4,7 @@ import { usePublishedQuery, useUnpublish } from '../graphql'
 import { cache } from './consts'
 
 export const Published = () => {
-  const { data, loading, error } = usePublishedQuery()
+  const { data, loading, error } = usePublishedQuery(cache)
 
   const [executeUnpublish] = useUnpublish()
 

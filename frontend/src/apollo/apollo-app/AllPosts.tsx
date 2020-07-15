@@ -4,7 +4,7 @@ import { useAllPostsQuery, useTogglePublish } from '../graphql'
 import { cache } from './consts'
 
 export const AllPosts = () => {
-  const { data, loading, error } = useAllPostsQuery()
+  const { data, loading, error } = useAllPostsQuery(cache)
   const [execute] = useTogglePublish()
 
   const togglePublish = (id: string) => {

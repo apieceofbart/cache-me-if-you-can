@@ -53,10 +53,7 @@ export const URQLApp = () => {
         <Published />
         <CreateDraft />
         <h2>Summary</h2>
-        <p>
-          Acts as "refetchQueries" by default, works across all queries as long as they don't return empty results.{' '}
-          <a href="https://formidable.com/open-source/urql/docs/basics/document-caching/#document-cache-gotchas">Fix</a>
-        </p>
+        <p>TODO: add manual updates or optimistic updates</p>
       </div>
     </Provider>
   )

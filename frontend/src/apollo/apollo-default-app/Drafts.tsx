@@ -4,7 +4,7 @@ import { useDraftsQuery, usePublish } from '../graphql'
 import { cache } from './consts'
 
 export const Drafts = () => {
-  const { data, loading, error } = useDraftsQuery()
+  const { data, loading, error } = useDraftsQuery(cache)
 
   const [executePublish] = usePublish()
 

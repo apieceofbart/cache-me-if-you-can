@@ -28,7 +28,7 @@ export const ApolloApp = () => {
         <Published />
         <CreateDraft />
         <h2>Summary</h2>
-        <p>Manual update of each query</p>
+        <p>Manual update of each query (TODO)</p>
       </div>
     </ApolloProvider>
   )

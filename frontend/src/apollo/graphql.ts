@@ -8,8 +8,7 @@ import {
   AllPostsQuery,
   PublishedQuery,
 } from '../shared/graphql'
-import { PostsData } from '../model'
-import { cache } from './apollo-app/consts'
+import { PostsData, Cache } from '../model'
 
 const PUBLISH_POST_GQL = gql(PublishMutation)
 
@@ -41,7 +40,7 @@ export const useCreateDraft = () => {
   return useMutation(CREATE_DRAFT_GQL)
 }
 
-export const useDraftsQuery = () => {
+export const useDraftsQuery = (cache: Cache) => {
   return useQuery<PostsData>(DRAFTS_QUERY_GQL, {
     variables: {
       cache,
@@ -49,7 +48,7 @@ export const useDraftsQuery = () => {
   })
 }
 
-export const useAllPostsQuery = () => {
+export const useAllPostsQuery = (cache: Cache) => {
   return useQuery<PostsData>(ALL_POSTS_QUERY_GQL, {
     variables: {
       cache,
@@ -57,7 +56,7 @@ export const useAllPostsQuery = () => {
   })
 }
 
-export const usePublishedQuery = () => {
+export const usePublishedQuery = (cache: Cache) => {
   return useQuery<PostsData>(PUBLISHED_QUERY_GQL, {
     variables: {
       cache,

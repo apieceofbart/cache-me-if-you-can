@@ -8,9 +8,8 @@ import {
   DraftsQuery,
   PublishedQuery,
 } from '../shared/graphql'
-import { cache } from '../apollo/apollo-app/consts'
-import { context } from './urql-default-app/consts'
-
+import { Cache } from '../model'
+export const context = { additionalTypenames: ['Post'] }
 export const usePublish = () => {
   return useMutation(PublishMutation)
 }
@@ -27,7 +26,7 @@ export const useCreateDraft = () => {
   return useMutation(CreateDraftMutation)
 }
 
-export const useAllPostsQuery = () => {
+export const useAllPostsQuery = (cache: Cache) => {
   return useQuery({
     query: AllPostsQuery,
     context,
@@ -37,7 +36,7 @@ export const useAllPostsQuery = () => {
   })
 }
 
-export const useDraftsQuery = () => {
+export const useDraftsQuery = (cache: Cache) => {
   return useQuery({
     query: DraftsQuery,
     context,
@@ -47,7 +46,7 @@ export const useDraftsQuery = () => {
   })
 }
 
-export const usePublishedQuery = () => {
+export const usePublishedQuery = (cache: Cache) => {
   return useQuery({
     query: PublishedQuery,
     context,

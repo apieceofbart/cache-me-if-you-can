@@ -21,7 +21,11 @@ export const ApolloDefaultApp = () => {
         <Published />
         <CreateDraft />
         <h2>Summary</h2>
-        <p>Does almost fucking nothing by default. Toggling the post updates all posts query. That's all.</p>
+        <p>
+          Does almost fucking nothing by default. Toggling the post updates all posts query. That's all. <br />
+          Adding a new draft post doesn't update any of the queries. Publishing/unpublishing posts doesn't affect the
+          Drafts and Published queries.
+        </p>
       </div>
     </ApolloProvider>
   )

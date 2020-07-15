@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { PostsData, Cache } from '../model'
+import { PostsData } from '../model'
+import { Badge } from './Badge'
 
 interface AllPostsProps {
   data?: PostsData
@@ -24,8 +25,7 @@ export const AllPosts = ({ data, loading, error, togglePublish }: AllPostsProps)
       <ol>
         {data?.posts.map((post) => (
           <li key={post.id} onClick={() => togglePublish(post.id)}>
-            {post.title}{' '}
-            {!post.published && <span style={{ padding: '3px', background: '#ccf', borderRadius: '5px' }}>DRAFT</span>}
+            {post.title} {post.published ? <Badge>PUBLISHED</Badge> : <Badge>DRAFT</Badge>}
           </li>
         ))}
       </ol>
