@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useQuery } from 'urql'
 import { PostsData } from '../model'
 import { useTogglePublish } from './mutationsHooks'
-import { AllPosts as AllPostsTemplate, getAllPostsQuery } from '../components/AllPosts'
+import { AllPosts as AllPostsTemplate, getAllPostsQuery } from '../shared/AllPosts'
 import { cache, context } from './consts'
 
 export const ALL_POSTS_QUERY = getAllPostsQuery(cache)

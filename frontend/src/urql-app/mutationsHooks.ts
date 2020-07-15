@@ -4,18 +4,16 @@ import {
   getUnpublishMutation,
   getToggleMutation,
   getCreateDraftMutation,
-} from '../components/mutationsHooks'
+} from '../shared/mutationsHooks'
 import { cache } from './consts'
 
-const PUBLISH_POST = `${getPublishMutation(cache)}
-`
+const PUBLISH_POST = getPublishMutation()
 
-const UNPUBLISH_POST = `${getUnpublishMutation(cache)}
-`
+const UNPUBLISH_POST = getUnpublishMutation(cache)
 
-const TOGGLE_PUBLISHED = `${getToggleMutation(cache)}
-`
-const CREATE_DRAFT = `${getCreateDraftMutation(cache)}`
+const TOGGLE_PUBLISHED = getToggleMutation(cache)
+
+const CREATE_DRAFT = getCreateDraftMutation(cache)
 
 export const usePublish = () => {
   return useMutation(PUBLISH_POST)

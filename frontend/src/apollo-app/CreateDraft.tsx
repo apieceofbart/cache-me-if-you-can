@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ALL_POSTS_QUERY } from './AllPosts'
 import { PostsData } from '../model'
 
-import { CreateDraft as CreateDraftTemplate } from '../components/CreateDraft'
+import { CreateDraft as CreateDraftTemplate } from '../shared/CreateDraft'
 import { useCreateDraft } from './mutationsHooks'
 import { cache } from './consts'
 

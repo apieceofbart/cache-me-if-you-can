@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useQuery } from 'urql'
-import { Drafts as DraftsTemplate, getDraftsQuery } from '../components/Drafts'
+import { Drafts as DraftsTemplate, getDraftsQuery } from '../shared/Drafts'
 import { PostsData } from '../model'
 import { usePublish } from './mutationsHooks'
 import { cache } from './consts'

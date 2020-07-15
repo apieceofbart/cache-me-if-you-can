@@ -1,6 +1,6 @@
 import { Cache } from '../model'
 
-export const getPublishMutation = (cache: Cache) => `
+export const getPublishMutation = () => `
   mutation Publish($id: Int!, $cache: Cache!) {
     publish(id: $id, cache: $cache) {
       id

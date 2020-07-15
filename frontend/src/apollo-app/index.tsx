@@ -1,5 +1,5 @@
-import { ApolloProvider } from '@apollo/react-hooks'
-import ApolloClient from 'apollo-boost'
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
+
 import * as React from 'react'
 import { AllPosts } from './AllPosts'
 import { CreateDraft } from './CreateDraft'
@@ -9,6 +9,7 @@ import { url } from '../consts'
 
 const client = new ApolloClient({
   uri: url,
+  cache: new InMemoryCache(),
 })
 
 export const ApolloApp = () => {

@@ -1,15 +1,14 @@
-import { useMutation } from '@apollo/react-hooks'
-import { gql } from 'apollo-boost'
+import { useMutation, gql } from '@apollo/client'
 import {
   getPublishMutation,
   getUnpublishMutation,
   getToggleMutation,
   getCreateDraftMutation,
-} from '../components/mutationsHooks'
+} from '../shared/mutationsHooks'
 import { cache } from './consts'
 
 const PUBLISH_POST = gql`
-  ${getPublishMutation(cache)}
+  ${getPublishMutation()}
 `
 
 const UNPUBLISH_POST = gql`

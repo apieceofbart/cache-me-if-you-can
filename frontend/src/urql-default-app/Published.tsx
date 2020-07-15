@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useQuery } from 'urql'
-import { Published as PublishedTemplate, getPublishedQuery } from '../components/Published'
+import { Published as PublishedTemplate, getPublishedQuery } from '../shared/Published'
 import { PostsData } from '../model'
 import { useUnpublish } from './mutationsHooks'
 import { cache, context } from './consts'

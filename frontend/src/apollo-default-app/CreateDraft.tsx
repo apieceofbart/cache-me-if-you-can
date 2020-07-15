@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { CreateDraft as CreateDraftTemplate } from '../components/CreateDraft'
+import { CreateDraft as CreateDraftTemplate } from '../shared/CreateDraft'
 import { useCreateDraft } from './mutationsHooks'
 import { cache } from './consts'
 
