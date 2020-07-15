@@ -9,7 +9,13 @@ import { url } from '../consts'
 
 const client = new ApolloClient({
   uri: url,
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    // typePolicies: {
+    //   Post: {
+    //     keyFields: ['id', 'cache'],
+    //   },
+    // },
+  }),
 })
 
 export const ApolloApp = () => {

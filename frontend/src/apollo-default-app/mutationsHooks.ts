@@ -1,39 +1,26 @@
 import { useMutation, gql } from '@apollo/client'
-import {
-  getPublishMutation,
-  getUnpublishMutation,
-  getToggleMutation,
-  getCreateDraftMutation,
-} from '../shared/mutationsHooks'
-import { cache } from './consts'
+import { PublishMutation, UnpublishMutation, ToggleMutation, CreateDraftMutation } from '../shared/mutationsHooks'
 
-const PUBLISH_POST = gql`
-  ${getPublishMutation()}
-`
+const PUBLISH_POST_GQL = gql(PublishMutation)
 
-const UNPUBLISH_POST = gql`
-  ${getUnpublishMutation(cache)}
-`
-const TOGGLE_PUBLISHED = gql`
-  ${getToggleMutation(cache)}
-`
+const UNPUBLISH_POST_GQL = gql(UnpublishMutation)
 
-const CREATE_DRAFT = gql`
-  ${getCreateDraftMutation(cache)}
-`
+const TOGGLE_PUBLISHED_GQL = gql(ToggleMutation)
+
+const CREATE_DRAFT_GQL = gql(CreateDraftMutation)
 
 export const usePublish = () => {
-  return useMutation(PUBLISH_POST)
+  return useMutation(PUBLISH_POST_GQL)
 }
 
 export const useUnpublish = () => {
-  return useMutation(UNPUBLISH_POST)
+  return useMutation(UNPUBLISH_POST_GQL)
 }
 
 export const useTogglePublish = () => {
-  return useMutation(TOGGLE_PUBLISHED)
+  return useMutation(TOGGLE_PUBLISHED_GQL)
 }
 
 export const useCreateDraft = () => {
-  return useMutation(CREATE_DRAFT)
+  return useMutation(CREATE_DRAFT_GQL)
 }

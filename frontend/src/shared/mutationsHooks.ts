@@ -1,6 +1,6 @@
 import { Cache } from '../model'
 
-export const getPublishMutation = () => `
+export const PublishMutation = `
   mutation Publish($id: Int!, $cache: Cache!) {
     publish(id: $id, cache: $cache) {
       id
@@ -10,7 +10,7 @@ export const getPublishMutation = () => `
   }
 `
 
-export const getUnpublishMutation = (cache: Cache) => `
+export const UnpublishMutation = `
   mutation Unublish($id: Int!, $cache: Cache!) {
     unpublish(id: $id, cache: $cache) {
       id
@@ -20,7 +20,7 @@ export const getUnpublishMutation = (cache: Cache) => `
   }
 `
 
-export const getToggleMutation = (cache: Cache) => `
+export const ToggleMutation = `
   mutation TogglePublished($id: Int!, $cache: Cache!) {
     togglePublished(id: $id, cache: $cache) {
       id
@@ -30,7 +30,7 @@ export const getToggleMutation = (cache: Cache) => `
   }
 `
 
-export const getCreateDraftMutation = (cache: Cache) => `
+export const CreateDraftMutation = `
   mutation CreateDraft($title: String!, $cache: Cache!) {
     createDraft(title: $title, cache: $cache) {
       id

@@ -2,13 +2,17 @@ import * as React from 'react'
 import { useQuery } from 'urql'
 import { PostsData } from '../model'
 import { useTogglePublish } from './mutationsHooks'
-import { AllPosts as AllPostsTemplate, getAllPostsQuery } from '../shared/AllPosts'
+import { AllPosts as AllPostsTemplate, ALL_POSTS_QUERY } from '../shared/AllPosts'
 import { cache, context } from './consts'
 
-export const ALL_POSTS_QUERY = getAllPostsQuery(cache)
-
 export const AllPosts = () => {
-  const [{ data, fetching, error }] = useQuery<PostsData>({ query: ALL_POSTS_QUERY, context })
+  const [{ data, fetching, error }] = useQuery<PostsData>({
+    query: ALL_POSTS_QUERY,
+    context,
+    variables: {
+      cache,
+    },
+  })
 
   const [, executeTogglePublished] = useTogglePublish()
 

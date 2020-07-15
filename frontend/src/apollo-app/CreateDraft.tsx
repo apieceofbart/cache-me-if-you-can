@@ -1,6 +1,4 @@
 import * as React from 'react'
-import { ALL_POSTS_QUERY } from './AllPosts'
-import { PostsData } from '../model'
 
 import { CreateDraft as CreateDraftTemplate } from '../shared/CreateDraft'
 import { useCreateDraft } from './mutationsHooks'
@@ -14,18 +12,6 @@ export const CreateDraft = () => {
       variables: {
         title,
         cache,
-      },
-      update: (proxy, mutationResults) => {
-        const cachedDrafts = proxy.readQuery<PostsData>({ query: ALL_POSTS_QUERY })
-
-        const newDraft = mutationResults.data
-
-        if (newDraft && cachedDrafts) {
-          proxy.writeQuery<PostsData>({
-            query: ALL_POSTS_QUERY,
-            data: { posts: [...cachedDrafts.posts, newDraft.createDraft] },
-          })
-        }
       },
     })
   }

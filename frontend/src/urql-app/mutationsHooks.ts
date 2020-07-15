@@ -1,32 +1,19 @@
 import { useMutation } from 'urql'
-import {
-  getPublishMutation,
-  getUnpublishMutation,
-  getToggleMutation,
-  getCreateDraftMutation,
-} from '../shared/mutationsHooks'
+import { PublishMutation, UnpublishMutation, ToggleMutation, CreateDraftMutation } from '../shared/mutationsHooks'
 import { cache } from './consts'
 
-const PUBLISH_POST = getPublishMutation()
-
-const UNPUBLISH_POST = getUnpublishMutation(cache)
-
-const TOGGLE_PUBLISHED = getToggleMutation(cache)
-
-const CREATE_DRAFT = getCreateDraftMutation(cache)
-
 export const usePublish = () => {
-  return useMutation(PUBLISH_POST)
+  return useMutation(PublishMutation)
 }
 
 export const useUnpublish = () => {
-  return useMutation(UNPUBLISH_POST)
+  return useMutation(UnpublishMutation)
 }
 
 export const useTogglePublish = () => {
-  return useMutation(TOGGLE_PUBLISHED)
+  return useMutation(ToggleMutation)
 }
 
 export const useCreateDraft = () => {
-  return useMutation(CREATE_DRAFT)
+  return useMutation(CreateDraftMutation)
 }

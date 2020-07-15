@@ -2,12 +2,13 @@ import * as React from 'react'
 
 import { createClient, Provider, dedupExchange, fetchExchange } from 'urql'
 import { cacheExchange } from '@urql/exchange-graphcache'
-import { AllPosts, ALL_POSTS_QUERY } from './AllPosts'
+import { AllPosts } from './AllPosts'
 import { Published } from './Published'
 import { Drafts } from './Drafts'
 import { CreateDraft } from './CreateDraft'
 import { Post } from '../model'
 import { url } from '../consts'
+import { ALL_POSTS_QUERY } from '../shared/AllPosts'
 
 const client = createClient({
   url,
